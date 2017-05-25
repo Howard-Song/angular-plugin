@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { BaseComponent } from "./../../app/app.base/BaseComponent";
 
 
 @Component({
@@ -79,7 +80,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 		`
 	]
 })
-export class WheelZoomComponent implements OnInit {
+export class WheelZoom extends BaseComponent implements OnInit {
 	@ViewChild("zoom") zoom: ElementRef;
 	@Input() imageUrl;
 	setImageUrl(config) {
@@ -96,6 +97,7 @@ export class WheelZoomComponent implements OnInit {
 		private elementRef: ElementRef,
 		private domSanitizer: DomSanitizer,
 	) {
+		super(activatedRoute);
 	}
 	options;
 	it;
@@ -119,7 +121,7 @@ export class WheelZoomComponent implements OnInit {
 			onLoad: function () { container.style.backgroundImage = ""; },
 			onError: function (err) { container.style.backgroundImage = "";  }
 		},
-			// this.it = new ImageTrans(container, this.options);
+			this.it = new ImageTrans(container, this.options);
 		this.it.load(src);
 	}
 	right() {

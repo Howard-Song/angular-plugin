@@ -5,17 +5,19 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes, RouteReuseStrategy } from '@angular/Router';
 import { CommonModule as NgCommonModule } from '@angular/common';
 
+import { RouteGuard, CustomReuseStrategy } from "./../common/providers/RouteGuard";
 
 import { AppComponent } from './app.component';
-import { WheelZoomComponent } from './../wheelZoom/views/WheelZoomComponent';
+import { Demo } from './../demo/pages/Demo';
 
-import { WheelZoomModule } from "./../wheelZoom/WheelZoomModule"
+import { DemoModule } from './../demo/DemoModule';
+import { CommonModule } from './../common/CommonModule';
+
 /**
  * 路由配置
  */
 const routes: Routes = [
-  { path: "", component: WheelZoomComponent },
-  { path: "wheelZoom", loadChildren: "wheelZoom/WheelZoomModule#WheelZoomModule" },
+  { path: "", component: Demo },
 
 ];
 @NgModule({
@@ -26,12 +28,18 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    WheelZoomModule,
+    DemoModule,
+    CommonModule,
     RouterModule.forRoot(routes, {
       useHash: true
     })
   ],
-  providers: [],
+  providers: [
+    /**
+     * 是否将页面缓存
+     */
+    { provide: RouteReuseStrategy, useClass: CustomReuseStrategy },
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

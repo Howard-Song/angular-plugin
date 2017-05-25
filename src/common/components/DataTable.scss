@@ -1,0 +1,80 @@
+.datatable-header-cell {
+  height: 35px;
+  &.sortable>div:after {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    content: "\65";
+  }
+  &.sortable.sort-active>div:after {
+    content: "";
+  }
+  div {
+    line-height: 15px;
+  }
+}
+
+.datatable-scroll {
+  .datatable-row-wrapper:nth-of-type(odd) {
+    background-color: #f1f1f1;
+  }
+}
+
+.datatable-footer {
+  margin-bottom: 50px;
+  .page-count:before {
+    content: "共";
+    line-height: 50px;
+    height: 50px;
+    display: inline-block;
+  }
+  .page-count:after {
+    content: "条数据";
+    line-height: 50px;
+    height: 50px;
+    display: inline-block;
+  }
+}
+
+.ngx-datatable {
+  .datatable-header {
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    .datatable-header-cell {
+      // pointer-events: none;
+      font-size: 14px!important;
+      font-weight: bold!important;
+      padding: 10px 0 !important;
+      color: #000!important; // font-weight: bold !important;
+    }
+    .sortable {
+      pointer-events: all;
+    }
+  }
+}
+
+.datatable-body-cell {
+  padding: 0;
+  position: relative;
+  .datatable-body-cell-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: initial;
+    width: 100%;
+    word-break: break-all;
+  }
+}
+
+.datatable-header-cell-label {
+  user-select: initial;
+}
+
+.datatable-body-cell-label br:first-child {
+  display: none;
+}
