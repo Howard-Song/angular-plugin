@@ -1,0 +1,37 @@
+div.tooltip {
+  .tooltip-inner {
+    // min-width: 65px;
+    white-space: nowrap;
+    background-color: map-get($custom_color, orange);
+    position: fixed;
+    margin-top: -11px!important;
+  }
+}
+
+.tooltip.top-left .tooltip-arrow {
+  border-top-color: map-get($custom_color, orange);
+}
+
+.tooltip.top-right .tooltip-arrow {
+  border-top-color: map-get($custom_color, orange);
+}
+
+.tooltip.right .tooltip-arrow {
+  border-right-color: map-get($custom_color, orange);
+}
+
+.tooltip.left .tooltip-arrow {
+  border-left-color: map-get($custom_color, orange);
+}
+
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: map-get($custom_color, orange);
+}
+
+.tooltip.bottom-left .tooltip-arrow {
+  border-bottom-color: map-get($custom_color, orange);
+}
+
+.tooltip.bottom-right .tooltip-arrow {
+  border-bottom-color: map-get($custom_color, orange);
+}
