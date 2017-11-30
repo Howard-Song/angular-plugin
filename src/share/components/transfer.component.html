@@ -1,0 +1,47 @@
+<div class="transfer">
+  <div class="card">
+    <nav>
+      <input type="checkbox" #leftAllChecked [checked]="left.length == checked.left.length" (change)="checkAllLeft($event)">
+      <label class="cb-label"></label>
+      <span class="cb-span">{{ left.length }}条</span>
+    </nav>
+    <div>
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input placeholder="搜索" type="text" [(ngModel)]="leftValue" (keyup)="leftSearch($event)">
+      </div>
+      <div class="content">
+        <div *ngFor="let item of left;let index = index" [class.hide]="item.tHide">
+          <input class="checkbox" type="checkbox" [checked]="item.tChecked" (change)="fromLeft(index,$event)">
+          <label class="cb-label"></label>
+          <span class="cb-span">{{ item.label }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="oprate">
+    <button class="tansfer-left" [disabled]="checked.left.length == 0" (click)="tansferLeft()">向右传递</button>
+    <button [disabled]="checked.right.length == 0" (click)="tansferRight()">向左传递</button>
+    <button [disabled]="restValid" (click)="reset()">重置</button>
+  </div>
+  <div class="card">
+    <nav>
+      <input type="checkbox" #rightAllChecked [checked]="right.length == checked.right.length" (change)="checkAllRight($event)">
+      <label class="cb-label"></label>
+      <span class="cb-span">{{ right.length }}条</span>
+    </nav>
+    <div>
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input placeholder="搜索" type="text" [(ngModel)]="rightValue" (keyup)="rightSearch($event)">
+      </div>
+      <div class="content">
+        <div *ngFor="let item of right;let index = index" [class.hide]="item.tHide">
+          <input class="checkbox" type="checkbox" [checked]="item.tChecked" (change)="fromRight(index,$event)">
+          <label class="cb-label"></label>
+          <span class="cb-span">{{ item.label }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

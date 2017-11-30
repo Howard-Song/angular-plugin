@@ -1,0 +1,271 @@
+.transfer {
+  .card {
+    padding: 15px;
+    float: left;
+    width: 200px;
+    height: 250px;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    nav {
+      height: 30px;
+      line-height: 30px;
+    }
+    .search {
+      width: 200px;
+      height: 40px;
+      line-height: 40px;
+    }
+    .content {
+      height: 180px;
+      overflow: auto;
+      div {
+        height: 30px;
+        &:hover{
+          background-color: #f1f1f1;
+        }
+      }
+    }
+  }
+  .oprate {
+    float: left;
+    width: 108px;
+    height: 250px;
+    text-align: center;
+    button {
+      margin: 10px;
+    }
+    .tansfer-left {
+      margin-top: 50px;
+    }
+  }
+}
+
+input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.cb-span{
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+}
+
+.cb-label {
+  height: 20px;
+  width: 20px;
+  top: 5px;
+  left: 5px;
+  margin-right: 10px;
+  background: #f9f9f9;
+  border: 2px solid #cfcece;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: border-color ease 0.2s;
+  -moz-transition: border-color ease 0.2s;
+  -o-transition: border-color ease 0.2s;
+  -webkit-transition: border-color ease 0.2s;
+  cursor: pointer;
+}
+
+.cb-label .cb-label {
+  height: 20px;
+  width: 20px;
+  background: #f9f9f9;
+  border: 2px solid #cfcece;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: border-color ease 0.2s;
+  -moz-transition: border-color ease 0.2s;
+  -o-transition: border-color ease 0.2s;
+  -webkit-transition: border-color ease 0.2s;
+  cursor: pointer;
+}
+
+.cb-label::before,
+.cb-label::after {
+  box-sizing: border-box;
+  position: absolute;
+  height: 0;
+  width: 4px;
+  background: #fff;
+  display: inline-block;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  content: '';
+  transition: opacity ease 0.5s;
+}
+
+.cb-label::before {
+  top: 15.2px;
+  left: 6.2px;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.cb-label::after {
+  top: 9px;
+  left: 0px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked+.cb-label,
+.cb-label.checked {
+  background: #658db5;
+  border-color: #658db5;
+}
+
+input[type=checkbox]:checked+.cb-label::after,
+.cb-label.checked::after {
+  border-color: #fff;
+  height: 7px;
+  -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+  animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+
+input[type=checkbox]:checked+.cb-label::before,
+.cb-label.checked::before {
+  border-color: #fff;
+  height: 20px;
+  -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+  animation: dothatopcheck 0.4s ease 0s forwards;
+}
+
+@-webkit-keyframes dothabottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 7px;
+  }
+}
+
+@keyframes dothabottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 7px;
+  }
+}
+
+@keyframes dothatopcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 14px;
+  }
+}
+
+@-webkit-keyframes dothatopcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 14px;
+  }
+}
+
+::before,
+.cb-label::after {
+  box-sizing: border-box;
+  position: absolute;
+  height: 0;
+  width: 4px;
+  background: #fff;
+  display: inline-block;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  content: '';
+  transition: opacity ease 0.5s;
+}
+
+.cb-label::before {
+  top: 15.2px;
+  left: 6.2px;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.cb-label::after {
+  top: 9px;
+  left: 0px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked+.cb-label,
+.cb-label.checked {
+  background: #658db5;
+  border-color: #658db5;
+}
+
+input[type=checkbox]:checked+.cb-label::after,
+.cb-label.checked::after {
+  border-color: #fff;
+  height: 7px;
+  -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+  animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+
+input[type=checkbox]:checked+.cb-label::before,
+.cb-label.checked::before {
+  border-color: #fff;
+  height: 20px;
+  -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+  animation: dothatopcheck 0.4s ease 0s forwards;
+}
+
+@-webkit-keyframes dothabottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 7px;
+  }
+}
+
+@keyframes dothabottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 7px;
+  }
+}
+
+@keyframes dothatopcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 14px;
+  }
+}
+
+@-webkit-keyframes dothatopcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 14px;
+  }
+}

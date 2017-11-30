@@ -1,11 +1,15 @@
 {
-  "name": "a",
-  "version": "0.0.0",
+  "name": "angular-plugin",
+  "version": "0.1.0",
   "license": "MIT",
+  "author": {
+    "name": "yooRabbit",
+    "email": "bandolerolee@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
