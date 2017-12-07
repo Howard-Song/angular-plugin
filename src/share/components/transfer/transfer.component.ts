@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
-import { UtilService } from "../services/util.service";
+import { UtilService } from "../../services/util.service";
 
 /**
  * @title Transfer

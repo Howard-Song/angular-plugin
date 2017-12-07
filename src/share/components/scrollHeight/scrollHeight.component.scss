@@ -1,0 +1,27 @@
+.scroll-height{
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 25px;
+  text-align:center;
+  position:fixed;
+  background-color: #607d8b;
+  color: #fff;
+  bottom: 20px;
+  right: -60px;
+  z-index: 999;
+  transition: background-color .18s cubic-bezier(.6,0,.1,1),box-shadow .18s cubic-bezier(.6,0,.1,1),transform .18s cubic-bezier(.6,0,.1,1);
+  .mat-icon{
+    margin-left: -12px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: -2px;
+    font-size: 33px;
+  }
+}
+.show-scroll{
+  transform: translate(-84px, 0);
+}
